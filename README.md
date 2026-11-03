@@ -10,6 +10,13 @@ npm run dev      # ambiente de desenvolvimento
 npm run build    # gera dist/index.html (arquivo único, pronto para hospedar)
 ```
 
+## Publicação
+
+O site é publicado automaticamente no GitHub Pages a cada atualização da branch `main`:
+https://isaelrosa.github.io/cronos-technology-website-development/
+
+O workflow de publicação está em `.github/workflows/deploy.yml`.
+
 ## Painel administrativo
 
 - Acesse `/#/admin` (link "Área administrativa" no rodapé).
