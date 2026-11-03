@@ -18,7 +18,7 @@ const empty = (): Draft => ({
   cover: "",
   category: CATEGORIES[0],
   date: new Date().toISOString().slice(0, 10),
-  author: "Equipe Cronos",
+  author: "Equipe Khronos",
   published: true,
 });
 

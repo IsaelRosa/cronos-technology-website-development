@@ -9,7 +9,7 @@ import { ASSETS } from "@/data/seed";
 import { useSEO } from "@/hooks";
 
 const TERMINAL_LINES = [
-  "$ cronos deploy erp-industrial --prod",
+  "$ khronos deploy erp-industrial --prod",
   "✓ build concluído em 38s",
   "✓ 214 testes automatizados aprovados",
   "✓ integrações: ERP · WhatsApp · Pagamentos",
@@ -55,7 +55,7 @@ function TerminalCard() {
         <span className="size-2.5 rounded-full bg-amber-400/80" />
         <span className="size-2.5 rounded-full bg-emerald-400/80" />
         <span className="ml-3 flex items-center gap-1.5 text-slate-500">
-          <Terminal className="size-3" /> cronos-cli
+          <Terminal className="size-3" /> khronos-cli
         </span>
       </div>
       <div className="min-h-[6.2rem] space-y-1">
@@ -77,7 +77,7 @@ export default function Home() {
   const { state } = useCms();
   const s = state.settings;
   useSEO({
-    title: "Cronos Tecnologia e Sistemas | Tecnologia inteligente, soluções que transformam",
+    title: "Khronos Tecnologia e Sistemas | Tecnologia inteligente, soluções que transformam",
     description: s.description,
   });
 
@@ -129,7 +129,7 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-night-900 shadow-[0_40px_90px_-30px_rgba(47,107,255,.5)]">
                 <img
                   src={ASSETS.hero}
-                  alt="Painel de dados futurista representando soluções tecnológicas da Cronos"
+                  alt="Painel de dados futurista representando soluções tecnológicas da Khronos"
                   width={1280}
                   height={720}
                   fetchPriority="high"
@@ -189,7 +189,7 @@ export default function Home() {
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <Reveal className="relative">
               <div className="relative overflow-hidden rounded-[2rem] border border-white/10">
-                <img src={ASSETS.about} alt="Estúdio de desenvolvimento da Cronos" loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                <img src={ASSETS.about} alt="Estúdio de desenvolvimento da Khronos" loading="lazy" className="aspect-[4/3] w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-night-950/70 via-transparent to-transparent" aria-hidden />
               </div>
               <div className="absolute -bottom-6 -right-4 hidden rounded-2xl border border-white/10 bg-night-900/90 p-5 shadow-card backdrop-blur sm:block lg:-right-8">
@@ -200,9 +200,9 @@ export default function Home() {
             <div>
               <SectionHeading
                 align="left"
-                eyebrow="Sobre a Cronos"
+                eyebrow="Sobre a Khronos"
                 title={<>Parceira estratégica na sua <span className="text-gradient">jornada digital</span></>}
-                description="A Cronos Tecnologia e Sistemas nasceu para aproximar tecnologia de ponta das necessidades reais de empresas, profissionais e instituições. Unimos engenharia de software, design e visão de negócio para entregar soluções que funcionam — e continuam funcionando."
+                description="A Khronos Tecnologia e Sistemas nasceu para aproximar tecnologia de ponta das necessidades reais de empresas, profissionais e instituições. Unimos engenharia de software, design e visão de negócio para entregar soluções que funcionam — e continuam funcionando."
               />
               <Reveal delay={150}>
                 <ul className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -279,7 +279,7 @@ export default function Home() {
         <Container>
           <SectionHeading
             eyebrow="Diferenciais"
-            title={<>Por que empresas escolhem a <span className="text-gradient">Cronos</span></>}
+            title={<>Por que empresas escolhem a <span className="text-gradient">Khronos</span></>}
             description="Mais do que código: entregamos previsibilidade, segurança e uma parceria de longo prazo."
             className="mb-14"
           />

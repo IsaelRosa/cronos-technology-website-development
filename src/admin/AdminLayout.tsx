@@ -58,7 +58,7 @@ export function AdminLogin() {
             <Lock className="size-5" />
           </span>
           <h1 className="mt-5 text-2xl font-bold text-white">Painel administrativo</h1>
-          <p className="mt-1.5 text-sm text-slate-400">Acesso restrito à equipe da Cronos.</p>
+          <p className="mt-1.5 text-sm text-slate-400">Acesso restrito à equipe da Khronos.</p>
           <label className="mt-6 block">
             <span className="mb-1.5 block text-sm font-medium text-slate-200">Senha de acesso</span>
             <Input
@@ -143,7 +143,7 @@ export function AdminLayout() {
         <Link to="/admin/dashboard" className="mb-8 flex items-center gap-3 px-2">
           <LogoMark size={36} />
           <span className="flex flex-col leading-none">
-            <span className="font-display text-sm font-bold tracking-[0.18em] text-white">CRONOS</span>
+            <span className="font-display text-sm font-bold tracking-[0.18em] text-white">KHRONOS</span>
             <span className="mt-1 text-[0.6rem] uppercase tracking-[0.25em] text-slate-500">Painel</span>
           </span>
         </Link>

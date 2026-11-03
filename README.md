@@ -1,4 +1,4 @@
-# Cronos Tecnologia e Sistemas — Site institucional
+# Khronos Tecnologia e Sistemas — Site institucional
 
 Site institucional completo (React + Vite + Tailwind CSS v4) com portfólio dinâmico, blog, formulário de orçamento com envio real por e-mail e painel administrativo.
 

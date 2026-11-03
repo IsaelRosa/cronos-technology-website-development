@@ -179,7 +179,7 @@ export function BlogPost() {
           </div>
           <div className="mx-auto mt-14 max-w-3xl rounded-3xl border border-electric-400/20 bg-electric-500/10 p-8 text-center">
             <h2 className="text-xl font-bold text-white">Quer aplicar isso no seu negócio?</h2>
-            <p className="mt-2 text-sm text-slate-300">Converse com a Cronos e descubra como a tecnologia pode acelerar seus resultados.</p>
+            <p className="mt-2 text-sm text-slate-300">Converse com a Khronos e descubra como a tecnologia pode acelerar seus resultados.</p>
             <Button to="/contato" className="mt-6" arrow>
               Falar com um especialista
             </Button>

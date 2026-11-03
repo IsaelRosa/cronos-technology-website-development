@@ -7,13 +7,13 @@ export function Privacy() {
   const s = useSettings();
   useSEO({
     title: "Política de Privacidade",
-    description: "Saiba como a Cronos Tecnologia e Sistemas coleta, utiliza e protege seus dados pessoais em conformidade com a LGPD.",
+    description: "Saiba como a Khronos Tecnologia e Sistemas coleta, utiliza e protege seus dados pessoais em conformidade com a LGPD.",
   });
 
   const sections = [
     {
       title: "1. Quem somos",
-      text: `A ${s.companyName} ("Cronos") é a controladora dos dados pessoais coletados por meio deste site. Em caso de dúvidas, entre em contato pelo e-mail ${s.email}.`,
+      text: `A ${s.companyName} ("Khronos") é a controladora dos dados pessoais coletados por meio deste site. Em caso de dúvidas, entre em contato pelo e-mail ${s.email}.`,
     },
     {
       title: "2. Quais dados coletamos",

@@ -43,7 +43,7 @@ async function deliverByEmail(data: FormData, settings: Settings): Promise<boole
     servico: data.service,
     assunto: data.subject,
     mensagem: data.message,
-    origem: "Site Cronos Tecnologia e Sistemas",
+    origem: "Site Khronos Tecnologia e Sistemas",
   };
   const headers = { "Content-Type": "application/json", Accept: "application/json" };
 
@@ -116,7 +116,7 @@ export default function Contact() {
   useSEO({
     title: "Contato e orçamento",
     description:
-      "Solicite um orçamento para sistemas, sites, aplicativos, automações e soluções com IA. Fale com a Cronos Tecnologia e Sistemas por formulário, e-mail ou WhatsApp.",
+      "Solicite um orçamento para sistemas, sites, aplicativos, automações e soluções com IA. Fale com a Khronos Tecnologia e Sistemas por formulário, e-mail ou WhatsApp.",
   });
 
   const set = <K extends keyof FormData>(key: K, value: FormData[K]) => {
@@ -473,7 +473,7 @@ export default function Contact() {
                   <div className={cn("overflow-hidden rounded-3xl border border-white/8")}>
                     <iframe
                       src={s.mapUrl}
-                      title="Localização da Cronos Tecnologia e Sistemas"
+                      title="Localização da Khronos Tecnologia e Sistemas"
                       className="h-64 w-full grayscale-[40%] contrast-[1.05]"
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"

@@ -9,7 +9,7 @@ export default function Portfolio() {
   useSEO({
     title: "Portfólio de projetos",
     description:
-      "Conheça os sistemas de gestão, sites, aplicações web, aplicativos e soluções com inteligência artificial desenvolvidos pela Cronos Tecnologia e Sistemas.",
+      "Conheça os sistemas de gestão, sites, aplicações web, aplicativos e soluções com inteligência artificial desenvolvidos pela Khronos Tecnologia e Sistemas.",
   });
 
   return (

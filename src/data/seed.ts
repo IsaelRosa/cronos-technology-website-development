@@ -29,15 +29,15 @@ export function resolveImage(src: string | undefined): string {
 export const DEFAULT_ADMIN_PASSWORD = "cronos2024";
 
 export const defaultSettings: Settings = {
-  companyName: "Cronos Tecnologia e Sistemas",
-  shortName: "Cronos",
+  companyName: "Khronos Tecnologia e Sistemas",
+  shortName: "Khronos",
   tagline: "Tecnologia inteligente, soluções que transformam.",
   description:
     "Desenvolvemos sistemas personalizados, plataformas web, aplicativos e soluções com inteligência artificial que impulsionam a transformação digital de empresas, profissionais e instituições.",
   email: "contato@cronostecnologia.com.br",
   phone: "+55 (11) 99999-0000",
   whatsapp: "5511999990000",
-  whatsappMessage: "Olá! Gostaria de solicitar um orçamento com a Cronos Tecnologia e Sistemas.",
+  whatsappMessage: "Olá! Gostaria de solicitar um orçamento com a Khronos Tecnologia e Sistemas.",
   address: "Av. Paulista, 1000 - Bela Vista",
   city: "São Paulo - SP",
   mapUrl: "",
@@ -150,7 +150,7 @@ export const seedState: CmsState = {
   projects: [
     {
       id: "p1",
-      name: "Cronos ERP Industrial",
+      name: "Khronos ERP Industrial",
       cover: "asset:p-erp",
       description:
         "Sistema de gestão completo para indústria de médio porte, integrando produção, estoque, compras, financeiro e indicadores em tempo real.",
@@ -259,12 +259,12 @@ export const seedState: CmsState = {
       excerpt:
         "Antes de sair contratando ferramentas, entenda quais processos realmente se beneficiam de inteligência artificial e como medir o retorno.",
       content:
-        "A inteligência artificial generativa deixou de ser tendência para se tornar uma vantagem competitiva concreta. Mas a pergunta que mais ouvimos dos nossos clientes é simples: por onde começar?\n\n## Comece pelos processos, não pela tecnologia\n\nO erro mais comum é adotar uma ferramenta e depois procurar um problema para ela resolver. O caminho inverso é mais eficiente: mapeie tarefas repetitivas, que dependem de leitura ou produção de texto, e que consomem horas da equipe.\n\n- Atendimento e triagem de solicitações\n- Leitura e classificação de documentos\n- Geração de relatórios e resumos\n- Apoio à equipe comercial com propostas\n\n## Meça antes e depois\n\nDefina indicadores claros: tempo médio de resposta, volume de atendimentos manuais, taxa de erro. Sem uma linha de base, é impossível provar o retorno do investimento.\n\n## Segurança e governança dos dados\n\nIA aplicada ao negócio exige cuidado com dados sensíveis. Avalie onde as informações são processadas, quais políticas de retenção existem e como garantir conformidade com a LGPD.\n\n## Conclusão\n\nProjetos de IA bem-sucedidos começam pequenos, com escopo claro e métricas definidas. A Cronos acompanha empresas em toda essa jornada: do diagnóstico à implementação.",
+        "A inteligência artificial generativa deixou de ser tendência para se tornar uma vantagem competitiva concreta. Mas a pergunta que mais ouvimos dos nossos clientes é simples: por onde começar?\n\n## Comece pelos processos, não pela tecnologia\n\nO erro mais comum é adotar uma ferramenta e depois procurar um problema para ela resolver. O caminho inverso é mais eficiente: mapeie tarefas repetitivas, que dependem de leitura ou produção de texto, e que consomem horas da equipe.\n\n- Atendimento e triagem de solicitações\n- Leitura e classificação de documentos\n- Geração de relatórios e resumos\n- Apoio à equipe comercial com propostas\n\n## Meça antes e depois\n\nDefina indicadores claros: tempo médio de resposta, volume de atendimentos manuais, taxa de erro. Sem uma linha de base, é impossível provar o retorno do investimento.\n\n## Segurança e governança dos dados\n\nIA aplicada ao negócio exige cuidado com dados sensíveis. Avalie onde as informações são processadas, quais políticas de retenção existem e como garantir conformidade com a LGPD.\n\n## Conclusão\n\nProjetos de IA bem-sucedidos começam pequenos, com escopo claro e métricas definidas. A Khronos acompanha empresas em toda essa jornada: do diagnóstico à implementação.",
       cover:
         "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
       category: "Inteligência Artificial",
       date: "2025-02-10",
-      author: "Equipe Cronos",
+      author: "Equipe Khronos",
       published: true,
     },
     {
@@ -279,7 +279,7 @@ export const seedState: CmsState = {
         "https://images.pexels.com/photos/14314638/pexels-photo-14314638.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
       category: "Desenvolvimento de Sistemas",
       date: "2025-01-22",
-      author: "Equipe Cronos",
+      author: "Equipe Khronos",
       published: true,
     },
     {
@@ -289,12 +289,12 @@ export const seedState: CmsState = {
       excerpt:
         "Automação inteligente, dados em tempo real, experiências omnichannel e muito mais: o que deve guiar os investimentos em tecnologia.",
       content:
-        "A velocidade das mudanças tecnológicas exige atenção constante. Separamos as tendências que mais devem impactar empresas de todos os portes.\n\n## 1. Automação inteligente\n\nA combinação de automação de processos com IA permite que sistemas tomem decisões simples sozinhos, liberando as equipes para atividades estratégicas.\n\n## 2. Dados em tempo real\n\nPainéis atualizados em tempo real substituem relatórios mensais, permitindo correções de rota imediatas.\n\n## 3. Integração total\n\nEmpresas estão eliminando ilhas de informação com integrações via APIs, conectando vendas, operação e financeiro.\n\n## 4. Experiência do usuário como prioridade\n\nSistemas internos também precisam ser agradáveis de usar. Interfaces bem desenhadas reduzem erros e aceleram treinamento.\n\n## 5. Segurança e privacidade por padrão\n\nCom a LGPD consolidada, proteção de dados deixou de ser diferencial para se tornar requisito básico.\n\n## Conclusão\n\nAcompanhar tendências é importante, mas aplicá-las com critério é o que gera resultado. Conte com a Cronos para transformar tecnologia em vantagem competitiva.",
+        "A velocidade das mudanças tecnológicas exige atenção constante. Separamos as tendências que mais devem impactar empresas de todos os portes.\n\n## 1. Automação inteligente\n\nA combinação de automação de processos com IA permite que sistemas tomem decisões simples sozinhos, liberando as equipes para atividades estratégicas.\n\n## 2. Dados em tempo real\n\nPainéis atualizados em tempo real substituem relatórios mensais, permitindo correções de rota imediatas.\n\n## 3. Integração total\n\nEmpresas estão eliminando ilhas de informação com integrações via APIs, conectando vendas, operação e financeiro.\n\n## 4. Experiência do usuário como prioridade\n\nSistemas internos também precisam ser agradáveis de usar. Interfaces bem desenhadas reduzem erros e aceleram treinamento.\n\n## 5. Segurança e privacidade por padrão\n\nCom a LGPD consolidada, proteção de dados deixou de ser diferencial para se tornar requisito básico.\n\n## Conclusão\n\nAcompanhar tendências é importante, mas aplicá-las com critério é o que gera resultado. Conte com a Khronos para transformar tecnologia em vantagem competitiva.",
       cover:
         "https://images.pexels.com/photos/14314636/pexels-photo-14314636.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
       category: "Transformação Digital",
       date: "2024-12-05",
-      author: "Equipe Cronos",
+      author: "Equipe Khronos",
       published: true,
     },
   ],

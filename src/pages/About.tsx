@@ -32,9 +32,9 @@ const COMMITMENTS = [
 
 export default function About() {
   useSEO({
-    title: "Sobre a Cronos",
+    title: "Sobre a Khronos",
     description:
-      "Conheça a Cronos Tecnologia e Sistemas: missão, visão, valores e o compromisso com soluções digitais sob medida, qualidade e inovação contínua.",
+      "Conheça a Khronos Tecnologia e Sistemas: missão, visão, valores e o compromisso com soluções digitais sob medida, qualidade e inovação contínua.",
   });
 
   return (
@@ -42,7 +42,7 @@ export default function About() {
       <PageHero
         eyebrow="Sobre a empresa"
         title={<>Tecnologia com propósito, <span className="text-gradient">construída para durar</span></>}
-        description="A Cronos Tecnologia e Sistemas desenvolve software sob medida para empresas, profissionais e instituições que querem operar com mais eficiência, inteligência e segurança."
+        description="A Khronos Tecnologia e Sistemas desenvolve software sob medida para empresas, profissionais e instituições que querem operar com mais eficiência, inteligência e segurança."
       />
 
       <section className="pb-24">
@@ -77,7 +77,7 @@ export default function About() {
             <Reveal delay={120}>
               <div className="relative">
                 <div className="overflow-hidden rounded-[2rem] border border-white/10">
-                  <img src={ASSETS.about} alt="Ambiente de trabalho da equipe Cronos" className="aspect-[4/3] w-full object-cover" loading="lazy" />
+                  <img src={ASSETS.about} alt="Ambiente de trabalho da equipe Khronos" className="aspect-[4/3] w-full object-cover" loading="lazy" />
                 </div>
                 <div className="absolute -left-4 -bottom-6 rounded-2xl border border-white/10 bg-night-900/90 p-5 backdrop-blur sm:-left-8">
                   <p className="text-sm font-semibold text-white">Tecnologia inteligente,</p>
@@ -111,7 +111,7 @@ export default function About() {
         <Container>
           <SectionHeading
             eyebrow="Nosso compromisso"
-            title={<>O que você pode esperar <span className="text-gradient">da Cronos</span></>}
+            title={<>O que você pode esperar <span className="text-gradient">da Khronos</span></>}
             className="mb-14"
           />
           <div className="mx-auto max-w-4xl space-y-4">
