@@ -52,9 +52,13 @@ export async function hashPassword(pw: string): Promise<string> {
 
 function mergeWithSeed(parsed: Partial<CmsState>): CmsState {
   const parsedSettings = parsed.settings ?? {};
+  const outdated = (parsed.version ?? 1) < seedState.version;
   return {
     ...seedState,
     ...parsed,
+    version: seedState.version,
+    projects: outdated ? seedState.projects : parsed.projects ?? seedState.projects,
+    categories: outdated ? seedState.categories : parsed.categories ?? seedState.categories,
     posts: parsed.posts?.map((post) =>
       post.author === "Equipe Cronos"
         ? {
@@ -76,7 +80,14 @@ function mergeWithSeed(parsed: Partial<CmsState>): CmsState {
           ? seedState.settings.shortName
           : parsedSettings.shortName ?? seedState.settings.shortName,
       social: { ...seedState.settings.social, ...(parsedSettings.social ?? {}) },
-      stats: parsedSettings.stats ?? seedState.settings.stats,
+      stats: outdated ? seedState.settings.stats : parsedSettings.stats ?? seedState.settings.stats,
+      ...(outdated
+        ? {
+            email: seedState.settings.email,
+            phone: seedState.settings.phone,
+            whatsapp: seedState.settings.whatsapp,
+          }
+        : {}),
     },
   };
 }

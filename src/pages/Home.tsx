@@ -192,10 +192,6 @@ export default function Home() {
                 <img src={ASSETS.about} alt="Estúdio de desenvolvimento da Khronos" loading="lazy" className="aspect-[4/3] w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-night-950/70 via-transparent to-transparent" aria-hidden />
               </div>
-              <div className="absolute -bottom-6 -right-4 hidden rounded-2xl border border-white/10 bg-night-900/90 p-5 shadow-card backdrop-blur sm:block lg:-right-8">
-                <p className="font-display text-3xl font-bold text-gradient">{s.stats[0]?.value}</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.15em] text-slate-400">{s.stats[0]?.label}</p>
-              </div>
             </Reveal>
             <div>
               <SectionHeading
