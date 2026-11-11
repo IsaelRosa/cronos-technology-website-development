@@ -66,7 +66,7 @@ export default function Logo({ className, size = 40, showText = true, light = tr
               light ? "text-white" : "text-night-900",
             )}
           >
-            KHRONOS
+            KRONOS
           </span>
           <span
             className={cn(

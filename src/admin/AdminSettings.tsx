@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import { Download, KeyRound, RotateCcw, Save, Upload } from "lucide-react";
-import type { FormProvider, Settings } from "@/types";
+import type { Settings } from "@/types";
 import { useCms } from "@/store/cms";
 import { downloadText } from "@/lib/utils";
-import { AdminButton, AdminCard, AdminHeader, ConfirmDialog, FieldWrap, Input, Select, Textarea, useToast } from "./fields";
+import { AdminButton, AdminCard, AdminHeader, ConfirmDialog, FieldWrap, Input, Textarea, useToast } from "./fields";
 
 export default function AdminSettings() {
   const { state, updateSettings, changePassword, exportJson, importJson, resetAll } = useCms();
@@ -117,31 +117,12 @@ export default function AdminSettings() {
           </AdminCard>
         </div>
 
-        <AdminCard title="Envio do formulário por e-mail" description="Integração real para receber as solicitações no e-mail institucional. As mensagens também ficam salvas no painel.">
+        <AdminCard title="Envio do formulário por e-mail" description="As solicitações são enviadas pelo servidor da Hostinger para o e-mail institucional.">
           <div className="space-y-4">
-            <FieldWrap label="Provedor de envio">
-              <Select value={form.formProvider} onChange={(e) => set("formProvider", e.target.value as FormProvider)}>
-                <option value="none">Não configurado (apenas registrar no painel)</option>
-                <option value="formspree">Formspree (gratuito, sem servidor)</option>
-                <option value="web3forms">Web3Forms (gratuito, sem servidor)</option>
-                <option value="custom">Endpoint próprio (API / webhook)</option>
-              </Select>
-            </FieldWrap>
-            {form.formProvider === "formspree" && (
-              <FieldWrap label="ID do formulário Formspree" hint="Crie um formulário em formspree.io apontando para o e-mail institucional e cole o ID (ex.: xqkrzabc).">
-                <Input value={form.formspreeId} onChange={(e) => set("formspreeId", e.target.value.trim())} placeholder="xqkrzabc" />
-              </FieldWrap>
-            )}
-            {form.formProvider === "web3forms" && (
-              <FieldWrap label="Access key do Web3Forms" hint="Gere uma chave gratuita em web3forms.com com o e-mail institucional.">
-                <Input value={form.web3formsKey} onChange={(e) => set("web3formsKey", e.target.value.trim())} placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
-              </FieldWrap>
-            )}
-            {form.formProvider === "custom" && (
-              <FieldWrap label="URL do endpoint (POST JSON)" hint="Recebe os campos: nome, empresa, email, telefone, servico, assunto, mensagem.">
-                <Input value={form.customEndpoint} onChange={(e) => set("customEndpoint", e.target.value.trim())} placeholder="https://api.suaempresa.com.br/contato" />
-              </FieldWrap>
-            )}
+            <p className="text-sm text-slate-400">
+              Destino: <span className="text-white">{form.email}</span>. O arquivo <code>contact.php</code> precisa
+              estar publicado na mesma pasta do site na Hostinger.
+            </p>
             <FieldWrap label="Google Analytics (ID de medição)" hint="Ex.: G-XXXXXXXXXX. Carregado somente após o consentimento de cookies (LGPD).">
               <Input value={form.analyticsId} onChange={(e) => set("analyticsId", e.target.value.trim())} placeholder="G-XXXXXXXXXX" />
             </FieldWrap>

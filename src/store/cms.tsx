@@ -51,35 +51,78 @@ export async function hashPassword(pw: string): Promise<string> {
 }
 
 function mergeWithSeed(parsed: Partial<CmsState>): CmsState {
-  const parsedSettings = parsed.settings ?? {};
+  const parsedSettings: Partial<Settings> = parsed.settings ?? {};
   const outdated = (parsed.version ?? 1) < seedState.version;
+  const replaceLegacyBrand = (value: string) =>
+    value.replace(/khronos/gi, (match) =>
+      match === match.toUpperCase() ? "KRONOS" : match[0] === match[0].toUpperCase() ? "Kronos" : "kronos",
+    );
+  const projects = outdated ? seedState.projects : parsed.projects ?? seedState.projects;
   return {
     ...seedState,
     ...parsed,
     version: seedState.version,
-    projects: outdated ? seedState.projects : parsed.projects ?? seedState.projects,
+    projects: projects.map((project) => ({
+      ...project,
+      name: replaceLegacyBrand(project.name),
+      description: replaceLegacyBrand(project.description),
+      longDescription: project.longDescription ? replaceLegacyBrand(project.longDescription) : project.longDescription,
+      link: project.link ? replaceLegacyBrand(project.link) : project.link,
+      client: project.client ? replaceLegacyBrand(project.client) : project.client,
+    })),
     categories: outdated ? seedState.categories : parsed.categories ?? seedState.categories,
-    posts: parsed.posts?.map((post) =>
-      post.author === "Equipe Cronos"
-        ? {
-            ...post,
-            author: "Equipe Khronos",
-            content: post.content.replace(/Cronos/g, "Khronos"),
-          }
-        : post,
-    ) ?? seedState.posts,
+    services: (parsed.services ?? seedState.services).map((service) => ({
+      ...service,
+      title: replaceLegacyBrand(service.title),
+      description: replaceLegacyBrand(service.description),
+    })),
+    posts:
+      parsed.posts?.map((post) => {
+        const migrated =
+          post.author === "Equipe Cronos"
+            ? {
+                ...post,
+                author: "Equipe Kronos",
+                content: post.content.replace(/Cronos/g, "Kronos"),
+              }
+            : post;
+        return {
+          ...migrated,
+          title: replaceLegacyBrand(migrated.title),
+          excerpt: replaceLegacyBrand(migrated.excerpt),
+          content: replaceLegacyBrand(migrated.content),
+          author: replaceLegacyBrand(migrated.author),
+        };
+      }) ?? seedState.posts,
     settings: {
       ...seedState.settings,
       ...parsedSettings,
       companyName:
-        parsedSettings.companyName === "Cronos Tecnologia e Sistemas"
+        parsedSettings.companyName === "Cronos Tecnologia e Sistemas" ||
+        parsedSettings.companyName === "Khronos Tecnologia e Sistemas"
           ? seedState.settings.companyName
-          : parsedSettings.companyName ?? seedState.settings.companyName,
+          : replaceLegacyBrand(parsedSettings.companyName ?? seedState.settings.companyName),
       shortName:
-        parsedSettings.shortName === "Cronos"
+        parsedSettings.shortName === "Cronos" || parsedSettings.shortName === "Khronos"
           ? seedState.settings.shortName
-          : parsedSettings.shortName ?? seedState.settings.shortName,
-      social: { ...seedState.settings.social, ...(parsedSettings.social ?? {}) },
+          : replaceLegacyBrand(parsedSettings.shortName ?? seedState.settings.shortName),
+      tagline: replaceLegacyBrand(parsedSettings.tagline ?? seedState.settings.tagline),
+      description: replaceLegacyBrand(parsedSettings.description ?? seedState.settings.description),
+      email:
+        parsedSettings.email === "contato@kronostecnologiaesistemas.com.br"
+          ? seedState.settings.email
+          : parsedSettings.email ?? seedState.settings.email,
+      whatsappMessage: replaceLegacyBrand(parsedSettings.whatsappMessage ?? seedState.settings.whatsappMessage),
+      siteUrl: replaceLegacyBrand(parsedSettings.siteUrl ?? seedState.settings.siteUrl),
+      formProvider: "hostinger",
+      social: {
+        ...seedState.settings.social,
+        ...(parsedSettings.social ?? {}),
+        instagram:
+          parsedSettings.social?.instagram === "https://instagram.com/cronostecnologia"
+            ? seedState.settings.social.instagram
+            : parsedSettings.social?.instagram ?? seedState.settings.social.instagram,
+      },
       stats: outdated ? seedState.settings.stats : parsedSettings.stats ?? seedState.settings.stats,
       ...(outdated
         ? {

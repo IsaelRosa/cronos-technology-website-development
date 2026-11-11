@@ -127,7 +127,7 @@ export default function AdminMessages() {
                   <Mail className="size-4" /> Responder por e-mail
                 </a>
                 <a
-                  href={`https://wa.me/${waDigits(selected.phone)}?text=${encodeURIComponent(`Olá ${selected.name.split(" ")[0]}, aqui é da Khronos Tecnologia e Sistemas. Recebemos sua solicitação sobre "${selected.subject}".`)}`}
+                  href={`https://wa.me/${waDigits(selected.phone)}?text=${encodeURIComponent(`Olá ${selected.name.split(" ")[0]}, aqui é da Kronos Tecnologia e Sistemas. Recebemos sua solicitação sobre "${selected.subject}".`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex h-10 items-center gap-2 rounded-xl bg-[#25D366] px-4 text-sm font-semibold text-white hover:brightness-105"

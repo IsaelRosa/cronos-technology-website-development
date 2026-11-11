@@ -20,7 +20,7 @@ function setMeta(selector: string, attr: "name" | "property", key: string, conte
 /** Atualiza título, descrição e tags Open Graph da página (SEO). */
 export function useSEO({ title, description, image, noIndex }: SeoOptions) {
   useEffect(() => {
-    const fullTitle = title.includes("Khronos") ? title : `${title} | Khronos Tecnologia e Sistemas`;
+    const fullTitle = title.includes("Kronos") ? title : `${title} | Kronos Tecnologia e Sistemas`;
     document.title = fullTitle;
     if (description) {
       setMeta('meta[name="description"]', "name", "description", description);

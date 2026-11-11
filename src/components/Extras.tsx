@@ -23,7 +23,7 @@ export function WhatsAppButton() {
       href={whatsappLink(settings)}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Falar com a Khronos pelo WhatsApp"
+      aria-label="Falar com a Kronos pelo WhatsApp"
       className="group fixed bottom-6 right-5 z-40 flex items-center gap-3 sm:right-6"
     >
       <span className="pointer-events-none hidden rounded-full border border-white/10 bg-night-900/90 px-4 py-2 text-sm font-medium text-white opacity-0 shadow-xl backdrop-blur transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 translate-x-2 sm:block">

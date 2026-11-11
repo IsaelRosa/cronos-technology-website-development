@@ -46,7 +46,7 @@ export default function Navbar() {
         Pular para o conteúdo
       </a>
       <Container className="flex items-center justify-between">
-        <Link to="/" aria-label="Khronos Tecnologia e Sistemas - página inicial" className="shrink-0">
+        <Link to="/" aria-label="Kronos Tecnologia e Sistemas - página inicial" className="shrink-0">
           <Logo size={38} />
         </Link>
 

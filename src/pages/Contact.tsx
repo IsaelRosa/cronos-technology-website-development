@@ -6,7 +6,6 @@ import { Button, Container, PageHero, Reveal } from "@/components/ui";
 import { useCms } from "@/store/cms";
 import { useSEO } from "@/hooks";
 import { formatPhone, isValidEmail, whatsappLink } from "@/lib/utils";
-import type { Settings } from "@/types";
 import { cn } from "@/utils/cn";
 
 interface FormData {
@@ -33,8 +32,8 @@ const initial: FormData = {
   website: "",
 };
 
-/** Envia a mensagem para o e-mail institucional por meio do provedor configurado no painel. */
-async function deliverByEmail(data: FormData, settings: Settings): Promise<boolean> {
+/** Envia o formulário ao endpoint PHP publicado junto com o site na Hostinger. */
+async function deliverByEmail(data: FormData): Promise<boolean> {
   const payload = {
     nome: data.name,
     empresa: data.company || "-",
@@ -43,38 +42,17 @@ async function deliverByEmail(data: FormData, settings: Settings): Promise<boole
     servico: data.service,
     assunto: data.subject,
     mensagem: data.message,
-    origem: "Site Khronos Tecnologia e Sistemas",
+    origem: "Site Kronos Tecnologia e Sistemas",
+    website: data.website,
   };
-  const headers = { "Content-Type": "application/json", Accept: "application/json" };
-
-  if (settings.formProvider === "formspree" && settings.formspreeId) {
-    const res = await fetch(`https://formspree.io/f/${settings.formspreeId}`, {
-      method: "POST",
-      headers,
-      body: JSON.stringify({ ...payload, _replyto: data.email, _subject: `[Site] ${data.subject}` }),
-    });
-    return res.ok;
-  }
-  if (settings.formProvider === "web3forms" && settings.web3formsKey) {
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers,
-      body: JSON.stringify({
-        access_key: settings.web3formsKey,
-        subject: `[Site] ${data.subject}`,
-        from_name: data.name,
-        replyto: data.email,
-        ...payload,
-      }),
-    });
-    const json = (await res.json().catch(() => ({}))) as { success?: boolean };
-    return res.ok && json.success !== false;
-  }
-  if (settings.formProvider === "custom" && settings.customEndpoint) {
-    const res = await fetch(settings.customEndpoint, { method: "POST", headers, body: JSON.stringify(payload) });
-    return res.ok;
-  }
-  return false;
+  const res = await fetch(new URL("contact.php", window.location.href), {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) return false;
+  const result = (await res.json()) as { success?: boolean };
+  return result.success === true;
 }
 
 function Field({
@@ -116,7 +94,7 @@ export default function Contact() {
   useSEO({
     title: "Contato e orçamento",
     description:
-      "Solicite um orçamento para sistemas, sites, aplicativos, automações e soluções com IA. Fale com a Khronos Tecnologia e Sistemas por formulário, e-mail ou WhatsApp.",
+      "Solicite um orçamento para sistemas, sites, aplicativos, automações e soluções com IA. Fale com a Kronos Tecnologia e Sistemas por formulário, e-mail ou WhatsApp.",
   });
 
   const set = <K extends keyof FormData>(key: K, value: FormData[K]) => {
@@ -148,9 +126,13 @@ export default function Contact() {
     setStatus("sending");
     let ok = false;
     try {
-      ok = await deliverByEmail(data, s);
+      ok = await deliverByEmail(data);
     } catch {
       ok = false;
+    }
+    if (!ok) {
+      setStatus("error");
+      return;
     }
     addMessage({
       name: data.name.trim(),
@@ -160,7 +142,7 @@ export default function Contact() {
       service: data.service,
       subject: data.subject.trim(),
       message: data.message.trim(),
-      delivered: ok,
+      delivered: true,
     });
     setDelivered(ok);
     setStatus("success");
@@ -473,7 +455,7 @@ export default function Contact() {
                   <div className={cn("overflow-hidden rounded-3xl border border-white/8")}>
                     <iframe
                       src={s.mapUrl}
-                      title="Localização da Khronos Tecnologia e Sistemas"
+                      title="Localização da Kronos Tecnologia e Sistemas"
                       className="h-64 w-full grayscale-[40%] contrast-[1.05]"
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"

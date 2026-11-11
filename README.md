@@ -1,4 +1,4 @@
-# Khronos Tecnologia e Sistemas — Site institucional
+# Kronos Tecnologia e Sistemas — Site institucional
 
 Site institucional completo (React + Vite + Tailwind CSS v4) com portfólio dinâmico, blog, formulário de orçamento com envio real por e-mail e painel administrativo.
 
@@ -26,17 +26,11 @@ O workflow de publicação está em `.github/workflows/deploy.yml`.
 
 > Para operação multiusuário em produção, o mesmo modelo de dados (`src/types.ts`) pode ser conectado a um backend/CMS (ex.: Supabase, Firebase ou API própria) substituindo a camada `src/store/cms.tsx`.
 
-## Envio do formulário para o e-mail institucional
+## Envio do formulário pela Hostinger
 
-Em **Configurações → Envio do formulário por e-mail**, escolha um provedor:
+O formulário envia as solicitações para `contato@khronostecnologiaesistemas.com.br` através do endpoint PHP `public/contact.php`, usando a função de e-mail do servidor da hospedagem. O build copia esse endpoint para `dist/contact.php`; publique **os dois arquivos** `dist/index.html` e `dist/contact.php` na mesma pasta do site. A caixa postal precisa existir e o plano da hospedagem deve permitir o envio de e-mails via PHP.
 
-| Provedor | Como configurar |
-| --- | --- |
-| **Formspree** | Crie um formulário em formspree.io apontando para o e-mail institucional e informe o ID (ex.: `xqkrzabc`). |
-| **Web3Forms** | Gere uma *access key* gratuita em web3forms.com com o e-mail institucional. |
-| **Endpoint próprio** | URL que recebe `POST` JSON com `nome, empresa, email, telefone, servico, assunto, mensagem`. |
-
-Independentemente do provedor, todas as mensagens ficam registradas em **Mensagens** no painel.
+As mensagens recebidas com sucesso também ficam registradas em **Mensagens** no navegador de quem enviou. Em **Configurações**, o painel mostra o endereço de destino.
 
 ## SEO, Analytics e LGPD
 

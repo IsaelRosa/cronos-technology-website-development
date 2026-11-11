@@ -53,7 +53,7 @@ export interface ContactMessage {
   delivered: boolean; // enviado por e-mail via integração
 }
 
-export type FormProvider = "none" | "formspree" | "web3forms" | "custom";
+export type FormProvider = "none" | "hostinger" | "formspree" | "web3forms" | "custom";
 
 export interface SocialLinks {
   instagram: string;
